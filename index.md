@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# [Advanced JavaScript](http://documentup.com/advanced-js/syllabus) Student Directory
+# [Github Breakout](http://documentup.com/advanced-js/syllabus) Attendee Directory
 
 ## Adding yourself
 
