@@ -1,0 +1,7 @@
+exclude:
+  - vendor
+current_term: hack_ica22
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
