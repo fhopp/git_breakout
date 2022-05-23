@@ -15,10 +15,6 @@ layout: default
 <br>
 <br>  
 
-
-
-## Add yourself
-
 Dear breakout attendees, please introduce yourself via a `GITHUB_USERNAME.json` file under the [`_data/{{ site.current_term }}/`](https://github.com/advanced-js/students/tree/gh-pages/_data/{{ site.current_term }}) directory, and submit via pull request. Here's an example:
 
 ```javascript
