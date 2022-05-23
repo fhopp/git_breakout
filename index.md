@@ -20,4 +20,4 @@ Using the format above, replace with your own `emoji` (choose from [this list](h
 
 ## Attendees
 
-{% include students.html %}
+{% include git_breakout.html %}
