@@ -13328,241 +13328,68 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exercise-1:-Fork-&amp;-Pull-Request-Your-People-Entry">Exercise 1: Fork &amp; Pull Request Your People Entry<a class="anchor-link" href="#Exercise-1:-Fork-&amp;-Pull-Request-Your-People-Entry">&#182;</a></h1><p>As an exercise for you to try out this fork &amp; pull request model, you will add yourself to the <a href="https://fhopp.github.io/git_breakout/">ICA 2022 Hackathon: Github Breakout</a> directory for this workshop which initially looks like this:</p>
+<h1 id="Hands-On:-Fork-&amp;-Pull-Request-Your-People-Entry">Hands On: Fork &amp; Pull Request Your People Entry<a class="anchor-link" href="#Hands-On:-Fork-&amp;-Pull-Request-Your-People-Entry">&#182;</a></h1><p>As an exercise for you to try out this fork &amp; pull request model, you will add yourself to the <a href="https://fhopp.github.io/git_breakout/">ICA 2022 Hackathon: Github Breakout</a> directory for this workshop which currently looks like this:</p>
+<p><img src="plots/attendance.png" alt="Clone"></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">fhopp</span><span class="o">/</span><span class="n">git_breakout</span><span class="o">.</span><span class="n">git</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Bonus:</strong> How can we find the link to this repository?</p>
+<p>Please join us! Because you cannot directly write to this repository, <code>fork</code> it into your own USER space:</p>
+<p><img src="plots/forking.png" alt="Clone"></p>
+<p>After forking, you can <code>clone</code> it onto your laptop to edit locally. For this, first copy the URL to the <strong>forked</strong> project:
+<img src="plots/clone.png" alt="Clone"></p>
+<p>And execute the following in your command line:</p>
+<p><code>git clone git@github.com:YOUR_FORK.git</code></p>
 
 </div>
 </div>
-</div></div></section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="plots/clone.png" alt="Clone"></p>
+<h2 id="Wohoo!-&#128640;">Wohoo! &#128640;<a class="anchor-link" href="#Wohoo!-&#128640;">&#182;</a></h2><p>Now that you forked the repo and cloned it, you are ready to edit it!</p>
+<p>Introduce yourself by adding a tiny file per your Github USERNAME.json under the _data/hack_ica22 directory. Here's an example for Freddy's Github username fhopp, so in a file named fhopp.json:</p>
+
+<pre><code>{
+ "emoji": "surfer",
+ "introduction": "Asst. Prof. @ASCoR. Latte art wins my heart."
+}</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Adding,-Committing--and-Pushing">Adding, Committing  and Pushing<a class="anchor-link" href="#Adding,-Committing--and-Pushing">&#182;</a></h2><p>After we created the .json file, we need to tell git that we want to <code>add</code> it to the files that will be uploaded to the online repository. For my example, we can achieve this via <code>git add _data/hack_ica22/fhopp.json</code> (edit to fit your file!).</p>
+<p><strong>Hint:</strong> If you type <code>git status</code>, you will see all edited files, with red files denoting files not (yet) added and green denoting files that were added.</p>
 <hr>
+<p>Next, with <code>commits</code>, we essentially create a <code>log</code> message that describes what changes we made. Here, a potential commit message might read:<br>
+<code>git commit -m "added myself to attendance list"</code></p>
+<p>And finally, we are ready to <code>push</code> -- uploading the file to the <code>fork</code> of our repository:<br>
+<code>git push</code></p>
+<p>🔥🔥🔥</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Cloning your first repository</span>
-
-<span class="n">Enough</span> <span class="n">theory</span><span class="o">!</span> Let<span class="err">&#39;</span>s start by <span class="sb">`</span>cloning<span class="sb">`</span> your first directory. In github parlance, <span class="sb">`</span>cloning<span class="sb">`</span> refers to downloading a repository <span class="k">for</span> **the first time** and is not to be confused with <span class="sb">`</span>pulling<span class="sb">`</span>, which will download the latest <span class="sb">`</span>version<span class="sb">`</span> of a repository. 
-
-<span class="o">**</span><span class="n">Exercise</span> <span class="mi">1</span><span class="p">:</span><span class="o">**</span> <span class="n">Download</span> <span class="n">the</span> <span class="n">repository</span> <span class="k">for</span> <span class="n">this</span> <span class="n">breakout</span> <span class="n">session</span> <span class="n">via</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="p">:</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging">Merging<a class="anchor-link" href="#Merging">&#182;</a></h2><p>In a final step, you typically wish to <code>merge</code> (integrate) your changes with the original repository <code>https://github.com/fhopp/git_breakout</code>.<br>
+To achieve this, you need to create a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">pull request</a>.</p>
+<p>The details of how this works (using Jekyll data files) are beyond the scope of this session, but provide a simple satisfying example for applying the fork &amp; pull request model to a repository for which you do not have write permissions and want to contribute towards.</p>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Avoiding-Conflicts">Avoiding Conflicts<a class="anchor-link" href="#Avoiding-Conflicts">&#182;</a></h1><p><img src="plots/meme_force.jpg" alt="Clone"></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Working-with-Branches">Working with Branches<a class="anchor-link" href="#Working-with-Branches">&#182;</a></h2><p>Once multiple people start working on the same repository, you will have to sort out how different changes/edits will be integrated/<code>merged</code> into the <code>master</code> repository.
-To avoid <code>conflicts</code>, we generally recommend that you create personal <code>branches</code>, which can later be merged into the <code>master</code> branch.</p>
-<p>You can think of a branch as your user-specific copy of the repository (until the are integrated/merged). Changes that you make and "push" to this branch will not affect the files contained in the original (master) branch of the repository.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Exercise 2:</strong> After cloning our repository, check the branch you are on by executing:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git</span> <span class="n">status</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This should show that you are</p>
-<ul>
-<li>On branch master</li>
-</ul>
-<p>Now, to create a personal branch, run the following command:</p>
-<p>(Note that if your branch already exists, you must check it out via git checkout BRANCH_NAME (no -b!). Likewise, you can switch back to the master branch via <code>git checkout master</code>)</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">BRANCH_NAME</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Inspecting-Edits">Inspecting Edits<a class="anchor-link" href="#Inspecting-Edits">&#182;</a></h2><p>Most likely, you want to make some changes to the repository (e.g., edit or fix some code).</p>
-<p>Once you made some edits to the repository (e.g., try touch NEWFILE), you can inspect those edits by again running git status. All edited/added/removed files should be shown in red in the git status output. You now have to tell Github which of these edits you actually want to be "added" to your online repository. You can add these files by executing git add filename(e.g., following the example above: git add NEWFILE). When you run git status now, you will see that NEWFILE is green, which means it is tracked by GitHub. After you are done with all your edits, you can push your changes to your online branch. Every push in Github first requires a commit where you clarify what edits you made. A typical commit would look like this git commit -m "added file NEWFILE". Run this command. Now, you are ready to push your changes to your branch (always reminds me of a great song). Note that if it is your first push to your branch you must declare an "upstream" branch by running git push --set-upstream origin BRANCH_NAME (e.g., git push --set-upstream origin fhopp). If everything went well, your changes are now reflected online in your personal branch.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Forks:-Copying-a-repository">Forks: Copying a repository<a class="anchor-link" href="#Forks:-Copying-a-repository">&#182;</a></h2><p>Most commonly, forks are used to either propose changes to someone else's project to which <strong>you do not have write access</strong>, or to use someone else's project as a starting point for your own idea. You can fork a repository to create a copy of the repository and make changes without affecting the upstream repository.</p>
-<p>To learn more about forking, see <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">forks</a></p>
 
 </div>
 </div>
