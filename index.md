@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# [Github Breakout](http://documentup.com/advanced-js/syllabus) Attendee Directory
+# Attendee Directory
 
 ## Adding yourself
 
@@ -20,4 +20,4 @@ Using the format above, replace with your own `emoji` (choose from [this list](h
 
 ## Students
 
-{% include students.html %}
+{% include git_breakout.html %}
