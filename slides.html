@@ -13275,9 +13275,60 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Github-Components">Github Components<a class="anchor-link" href="#Github-Components">&#182;</a></h1><p>Github essentially consists of <code>repositories</code>(think: folders) where you can store any type of file. An added benefit is that PDF or notebooks are rendered automatically and can be viewed from any browser.</p>
-<h2 id="Cloning-your-first-repository">Cloning your first repository<a class="anchor-link" href="#Cloning-your-first-repository">&#182;</a></h2><p>Enough theory! Let's start by <code>cloning</code> your first directory. In github parlance, <code>cloning</code> refers to downloading a repository for <strong>the first time</strong> and is not to be confused with <code>pulling</code>, which will download the latest <code>version</code> of a repository.</p>
-<p><strong>Exercise 1:</strong> Download the repository for this breakout session via the following command:</p>
+<h1 id="Github-Components">Github Components<a class="anchor-link" href="#Github-Components">&#182;</a></h1><p>Github essentially consists of <code>repositories</code>(think: folders) where you can store any type of file. An added benefit is PDFs, notebooks, and even slideshows (like this one!) are rendered automatically and can be viewed from any browser.</p>
+<h2 id="Forks-&#127860;---Clones-&#128125;---Branches-&#127794;">Forks &#127860; - Clones &#128125; - Branches &#127794;<a class="anchor-link" href="#Forks-&#127860;---Clones-&#128125;---Branches-&#127794;">&#182;</a></h2><p>Let's start getting your first github directory. In github, there are different ways to "download" a repository.</p>
+<p>Mainly, we distinguish between <code>forking</code> and <code>cloning</code>. The key difference between clone and fork comes down to how much control and independence you want over the repository once you've copied it.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Forking">Forking<a class="anchor-link" href="#Forking">&#182;</a></h2><p><code>Forking</code> is used to either propose changes to someone else's project to which <strong>you do not have write access</strong>, or to use someone else's project as a starting point for your own idea. You can fork a repository to create a copy of the repository and make changes without affecting the upstream repository. To learn more about forking, see <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">forks</a></p>
+<h2 id="Cloning">Cloning<a class="anchor-link" href="#Cloning">&#182;</a></h2><p>In contrast to a fork, <code>cloning</code> creates a <strong>linked copy</strong> that will continue to <strong>synchronize</strong> with the target repository.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="plots/clone-vs-fork.png" alt="Clone"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Branches">Branches<a class="anchor-link" href="#Branches">&#182;</a></h2><p>A <code>branch</code> in Git is just like a branch of a tree. When you create a new repository, what you actually do is create a <strong>main branch</strong> and when you upload edits (make <code>commits</code>), you only commit to this main branch. This main branch typically represents a stable version of your code and this will be the code which is released or published.</p>
+<p>So, this is the reason you do not probably want to try out new features or new code on this master branch. So, if you want to add a new feature to your application you’d have to create some kind of isolated environment to try out new features and if this works, you can go ahead and merge them into the main branch.</p>
+<p>This is what branching is all about; it is a Git function that essentially makes a copy of the code, allowing you to make changes on a particular copy and then merging the changes back to the main branch.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="plots/Fork-vs-Branch.jpg" alt="Clone"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Enough-Confusion?-Let's-jump-in!">Enough Confusion? Let's jump in!<a class="anchor-link" href="#Enough-Confusion?-Let's-jump-in!">&#182;</a></h2><p><img src="plots/git_onedoes.jpg" alt="Clone"></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Exercise-1:-Fork-&amp;-Pull-Request-Your-People-Entry">Exercise 1: Fork &amp; Pull Request Your People Entry<a class="anchor-link" href="#Exercise-1:-Fork-&amp;-Pull-Request-Your-People-Entry">&#182;</a></h1><p>As an exercise for you to try out this fork &amp; pull request model, you will add yourself to the <a href="https://fhopp.github.io/git_breakout/">ICA 2022 Hackathon: Github Breakout</a> directory for this workshop which initially looks like this:</p>
 
 </div>
 </div>
@@ -13311,11 +13362,74 @@ a.anchor-link {
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Cloning your first repository</span>
+
+<span class="n">Enough</span> <span class="n">theory</span><span class="o">!</span> Let<span class="err">&#39;</span>s start by <span class="sb">`</span>cloning<span class="sb">`</span> your first directory. In github parlance, <span class="sb">`</span>cloning<span class="sb">`</span> refers to downloading a repository <span class="k">for</span> **the first time** and is not to be confused with <span class="sb">`</span>pulling<span class="sb">`</span>, which will download the latest <span class="sb">`</span>version<span class="sb">`</span> of a repository. 
+
+<span class="o">**</span><span class="n">Exercise</span> <span class="mi">1</span><span class="p">:</span><span class="o">**</span> <span class="n">Download</span> <span class="n">the</span> <span class="n">repository</span> <span class="k">for</span> <span class="n">this</span> <span class="n">breakout</span> <span class="n">session</span> <span class="n">via</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span><span class="p">:</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Avoiding-Conflicts">Avoiding Conflicts<a class="anchor-link" href="#Avoiding-Conflicts">&#182;</a></h1><p><img src="plots/meme_force.jpg" alt="Clone"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Working-with-Branches">Working with Branches<a class="anchor-link" href="#Working-with-Branches">&#182;</a></h2><p>Once multiple people start working on the same repository, you will have to sort out how different changes/edits will be integrated/<code>merged</code> into the <code>master</code> repository.
 To avoid <code>conflicts</code>, we generally recommend that you create personal <code>branches</code>, which can later be merged into the <code>master</code> branch.</p>
 <p>You can think of a branch as your user-specific copy of the repository (until the are integrated/merged). Changes that you make and "push" to this branch will not affect the files contained in the original (master) branch of the repository.</p>
@@ -13443,6 +13557,15 @@ To avoid <code>conflicts</code>, we generally recommend that you create personal
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Forks:-Copying-a-repository">Forks: Copying a repository<a class="anchor-link" href="#Forks:-Copying-a-repository">&#182;</a></h2><p>Most commonly, forks are used to either propose changes to someone else's project to which <strong>you do not have write access</strong>, or to use someone else's project as a starting point for your own idea. You can fork a repository to create a copy of the repository and make changes without affecting the upstream repository.</p>
+<p>To learn more about forking, see <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">forks</a></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
