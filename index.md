@@ -18,6 +18,6 @@ Dear Hackathon attendees, please introduce yourself via a `GITHUB_USERNAME.json`
 
 Using the format above, replace with your own `emoji` (choose from [this list](http://www.emoji-cheat-sheet.com/)) and `introduction`. Note that we'll do this in the first class, using the same [workflow](http://advanced-js.github.io/syllabus/#workflow) that will be used for all assignments.
 
-## Students
+## Attendees
 
 {% include git_breakout.html %}
